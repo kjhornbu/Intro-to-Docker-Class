@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+    app:
+        build: .
+        volumes:
+            - .:/srv/python_scripts
+        tty: true
+        stdin_open: true
+        ports:
+            -3000:3000
+        command: "python /srv/python_scripts/index.py"
